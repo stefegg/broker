@@ -17,6 +17,7 @@ const server = new WebSocket.Server({ port: 8080, clientTracking: true }, functi
 
     server.clients.forEach(function each(client) {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
+                //sends to all clients who are listening but are not the newly connected client
                 client.send('New person connected');
     }
   });  
@@ -27,6 +28,7 @@ const server = new WebSocket.Server({ port: 8080, clientTracking: true }, functi
                   client.send(data);
         }
         });
+        //Sends to any client who connets
         ws.send('Connected to Websocket Server');
     });
 });

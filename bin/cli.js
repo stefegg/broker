@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const clientListen = require('../client.js')
+const clientListen = require('../lib/listen.js')
 
 function timeOut() {
     if (process.argv[2] == 'upload'){
