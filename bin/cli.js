@@ -1,15 +1,17 @@
 #!/usr/bin/env node
-const clientListen = require('../lib/listen.js')
 
-function timeOut() {
-    if (process.argv[2] == 'upload'){
-    } else if (process.argv[2] == 'listen'){
-        clientListen.clientListen()
-    } else if (process.argv[2] == 'show'){
-    } else {
-      console.log('Invalid command, see documentation for correct usage')
+
+const listener = require('../lib/listenMode.js');
+const clientUpload = require('../lib/uploadMode.js');
+
+function cliInput() {
+    if (process.argv[2] === 'listen') {
+        listener.clientListen()
+        } else if (process.argv[2] === 'upload') {
+        clientUpload.clientUpload()
+        } else console.log('gfy')
     }
-    
-    }
-    
-    timeOut();
+
+
+
+cliInput();
