@@ -17,7 +17,7 @@ const server = new WebSocket.Server({
 //   });
 
 server.on('connection', function connection(ws) {
-        console.log( server.clients );
+        // console.log( server.clients );
 
     server.clients.forEach(function each(client) {
         if (client !== ws && client.readyState === WebSocket.OPEN) {
