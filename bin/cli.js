@@ -12,7 +12,7 @@ function cliInput() {
         let fileName = file.substring(file.lastIndexOf("=") + 1);
         clientUpload.clientUpload(fileName)
         // console.log(fileName)
-    } else console.log('gfy')
+    } else console.log('Incorrect command, see readme')
 }
 
 
