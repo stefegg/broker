@@ -7,15 +7,6 @@ const server = new WebSocket.Server({
     console.log("WebSocket Server now running on port 8080....");
 });
 
-// server.on('connection', function connection(ws) {
-//     console.log( server.clients );
-//     ws.on('message', function incoming(message) {
-//       console.log('received: %s', message);
-//     });
-
-//     ws.send('something');
-//   });
-
 server.on('connection', function connection(ws) {
         // console.log( server.clients );
 
