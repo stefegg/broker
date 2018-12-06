@@ -13,6 +13,7 @@ server.on('connection', function connection(ws) {
     server.clients.forEach(function each(client) {
         if (client !== ws && client.readyState === WebSocket.OPEN) {
             //sends to all clients who are listening but are not the newly connected client
+
             client.send('New client connected');
         }
     });
