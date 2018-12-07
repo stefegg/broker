@@ -1,4 +1,5 @@
 const WebSocket = require('ws');
+var websocketStream = require('websocket-stream')
 
 const server = new WebSocket.Server({
     port: 8080,
@@ -22,6 +23,7 @@ server.on('connection', function connection(ws) {
         server.clients.forEach(function each(client) {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
                 client.send(data);
+
             }
         });
         //Sends to any client who connects
@@ -30,11 +32,16 @@ server.on('connection', function connection(ws) {
 });
 
 
-server.broadcast = function broadcast(data) {
-    server.clients.forEach(function each(client) {
-        if (client.readyState === WebSocket.OPEN) {
-            client.send(data);
+// server.broadcast = function broadcast(data) {
+//     server.clients.forEach(function each(client) {
+//         if (client.readyState === WebSocket.OPEN) {
+//             client.send(data);
 
-        }
-    });
-};
+//         }
+//     });
+// };
+
+// function handle(stream, request) {
+//     // `request` is the upgrade request sent by the client.
+//     fs.createReadStream('bigdata.json').pipe(stream)
+//   }
