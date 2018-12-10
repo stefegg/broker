@@ -26,7 +26,7 @@ function cliInput() {
         let fileName = file.substring(file.lastIndexOf("=") + 1);
         
         clientUpload.clientUpload(fileName)
-        console.log(process.argv)
+        // console.log(process.argv)
     } else console.log('Incorrect command, see readme')
 }
 
